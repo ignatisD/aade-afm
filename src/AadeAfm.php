@@ -47,7 +47,7 @@ class AadeAfm extends Crawler
                 "Content-Type: text/xml",
                 "Connection: Close",
             ];
-            $response = $this->curlRequest->post($this->uri, $headers, $body)->exec();
+            $response = $this->curlRequest->post($this->uri, $headers, $body)->exec()->toArray();
             if (!empty($response["error"])) {
                 return $this->errorHandler("Error: ".$response["error"]);
             }
