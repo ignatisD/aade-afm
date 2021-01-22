@@ -1,0 +1,31 @@
+{
+    "name": "iggi/aade-afm",
+    "description": "Retrieve a registered business AFM",
+    "keywords": ["afm", "vat", "aade"],
+    "homepage": "https://github.com/ignatisd/aade-afm",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ignatios Drakoulas",
+            "email": "ignatisnb@gmail.com",
+            "homepage": "https://ignatisd.gr"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Iggi\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.4",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-dom": "*",
+        "iggi/crawler": "^1.1"
+    },
+    "require-dev": {
+        "vlucas/phpdotenv": "^5.3"
+    }
+}
