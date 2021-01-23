@@ -60,6 +60,13 @@ class AadeAfm extends Crawler
         return $data;
     }
 
+    public function toArray($array) {
+        if (!is_array($array)) {
+            return [$array];
+        }
+        return $array;
+    }
+
     public function validate($afm)
     {
         if (!preg_match("/^\d{9}$/", $afm) || $afm === "000000000") {
@@ -170,11 +177,25 @@ EOL;
             return $data;
         }
         $data["success"] = true;
-        $data["business"] = [];
+        $data["business"] = [
+            "drastiriotita" => ""
+        ];
         $afmData = isset($afmResponse["RgWsPublicBasicRt_out"]) ? $afmResponse["RgWsPublicBasicRt_out"] : array();
         foreach ($afmData as $key => $value) {
             $key = substr($key, 2);
             $data["business"][$key] = is_array($value) ? null : $value;
+        }
+        $data["business"]["drastiriotites"] = [];
+        $firmActs = array();
+        if (isset($afmResponse["arrayOfRgWsPublicFirmActRt_out"], $afmResponse["arrayOfRgWsPublicFirmActRt_out"]["m:RgWsPublicFirmActRtUser"])) {
+            $firmActs = $this->toArray($afmResponse["arrayOfRgWsPublicFirmActRt_out"]["m:RgWsPublicFirmActRtUser"]);
+        }
+        foreach ($firmActs as $firmAct) {
+            if ($firmAct["m:firmActKind"] === "1") {
+                $data["business"]["drastiriotita"] = $firmAct["m:firmActDescr"];
+            } else {
+                $data["business"]["drastiriotites"][] = $firmAct["m:firmActDescr"];
+            }
         }
         return $data;
     }
