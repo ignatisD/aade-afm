@@ -1,7 +1,7 @@
 {
     "name": "iggi/aade-afm",
-    "description": "Retrieve a registered business AFM",
-    "keywords": ["afm", "vat", "aade"],
+    "description": "Info about a registered business Tax ID (AFM)",
+    "keywords": ["afm", "vat", "aade", "tax"],
     "homepage": "https://github.com/ignatisd/aade-afm",
     "type": "library",
     "license": "MIT",
