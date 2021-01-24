@@ -178,7 +178,8 @@ EOL;
         }
         $data["success"] = true;
         $data["business"] = [
-            "drastiriotita" => ""
+            "kad" => "",
+            "drastiriotita" => "",
         ];
         $afmData = isset($afmResponse["RgWsPublicBasicRt_out"]) ? $afmResponse["RgWsPublicBasicRt_out"] : array();
         foreach ($afmData as $key => $value) {
@@ -192,10 +193,15 @@ EOL;
         }
         foreach ($firmActs as $firmAct) {
             if ($firmAct["m:firmActKind"] === "1") {
+                $data["business"]["kad"] = $firmAct["m:firmActCode"];
                 $data["business"]["drastiriotita"] = $firmAct["m:firmActDescr"];
-            } else {
-                $data["business"]["drastiriotites"][] = $firmAct["m:firmActDescr"];
             }
+            $data["business"]["drastiriotites"][] = array(
+                "type" => $firmAct["m:firmActKind"],
+                "typeName" => $firmAct["m:firmActKindDescr"],
+                "kad" => $firmAct["m:firmActCode"],
+                "drastiriotita" => $firmAct["m:firmActDescr"],
+            );
         }
         return $data;
     }
