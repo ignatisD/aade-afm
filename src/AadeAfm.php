@@ -61,7 +61,7 @@ class AadeAfm extends Crawler
     }
 
     public function toArray($array) {
-        if (!is_array($array)) {
+        if (!isset($array[0])) {
             return [$array];
         }
         return $array;
