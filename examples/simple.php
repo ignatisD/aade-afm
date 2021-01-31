@@ -17,4 +17,4 @@ $crawler = new AadeAfm($username, $password, $authorisedCallerAfm);
 $afm = $_ENV["AFM"]; // AFM to search
 //$valid = $crawler->validate($afm);
 $data = $crawler->info($afm);
-AadeAfm::dd($data);
+echo json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);

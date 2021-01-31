@@ -22,8 +22,7 @@
         "php": ">=5.4",
         "ext-curl": "*",
         "ext-json": "*",
-        "ext-dom": "*",
-        "iggi/crawler": "^1.1"
+        "ext-dom": "*"
     },
     "require-dev": {
         "vlucas/phpdotenv": "^5.3"

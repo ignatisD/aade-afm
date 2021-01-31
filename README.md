@@ -47,6 +47,8 @@ echo json_encode($data, JSON_PRETTY_PRINT);
 {
     "success": true,
     "business": {
+        "kad": "XXXXXXXXX",
+        "drastiriotita": "XXXXXXXXXXXX",
         "afm": "XXXXXXX",
         "stopDate": "XXXXXXX",
         "postalAddressNo": "XXXXXXX",
@@ -63,6 +65,20 @@ echo json_encode($data, JSON_PRETTY_PRINT);
         "postalAreaDescription": "XXXXXXX",
         "INiFlagDescr": ""XXXXXXX",
         "postalZipCode": "XXXXXXX",
+        "drastiriotites": [
+            {
+                "type": "1",
+                "typeName": "ΚΥΡΙΑ",
+                "kad": "XXXXXXXXX",
+                "drastiriotita": "XXXXXXXXXXXX"
+            },
+            {
+                "type": "2",
+                "typeName": "ΔΕΥΤΕΡΕΥΟΥΣΑ",
+                "kad": "XXXXXXXXXXXX",
+                "drastiriotita": "XXXXXXXXXXXXXXXXXXXXX"
+            }
+        ]
     }
 }
  * Error
