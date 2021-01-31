@@ -32,15 +32,15 @@ $password = $_ENV["AADE_PASSWORD"]; // password
 $authorisedCallerAfm = $_ENV["AADE_AUTH"]; // optional if same with the caller's afm but if present must be authorised
 $afm = $_ENV["AFM"]; // AFM to search
 
-$crawler = new AadeAfm($username, $password, $authorisedCallerAfm);
+$api = new AadeAfm($username, $password, $authorisedCallerAfm);
 // You may check the API version
-// $data = $crawler->version();
+// $data = $api->version();
 
 // You may check the validity of the AFM (boolean)
-// $valid = $crawler->validate($afm);
+// $valid = $api->validate($afm);
 
 // You may retrieve the AFM information
-$data = $crawler->info($afm);
+$data = $api->info($afm);
 echo json_encode($data, JSON_PRETTY_PRINT);
 /*
  * Success
