@@ -1,5 +1,6 @@
-# AadeAfm - Info about a registered business Tax ID (AFM)
+# AadeAfm - Retrieve a registered business's Tax information using its ID (AFM)
 
+Uses the Official Online Service for Basic Data for Legal Entities
 
 ## Installation
 
@@ -98,4 +99,4 @@ Ignatios Drakoulas - <ignatisnb@gmail.com> - <https://twitter.com/ignatisd><br /
 
 ### License
 
-Crawler is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+AadeAfm is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
